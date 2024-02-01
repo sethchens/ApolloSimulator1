@@ -17,6 +17,6 @@
 void testRunner()
 {
    // Unit tests
-   // TestAngle().run();
+   TestAngle().run();
    TestAcceleration().run();
 }

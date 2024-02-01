@@ -18,8 +18,8 @@
  *********************************************/
 void Acceleration::add(const Acceleration& acceleration)
 {
-   ddx = -99.9;
-   ddy = -88.8;
+   ddx += acceleration.getDDX();
+   ddy += acceleration.getDDY();
 }
 
 /*********************************************
