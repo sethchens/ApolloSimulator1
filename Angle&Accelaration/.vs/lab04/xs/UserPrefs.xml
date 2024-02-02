@@ -1,9 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="angle.cpp">
+    <Files>
+      <File FileName="angle.cpp" Line="35" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="lab04" expanded="True" selected="True" />
+          <Node name="lab04" expanded="True">
+            <Node name="lab04" expanded="True">
+              <Node name="packages.config" selected="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
