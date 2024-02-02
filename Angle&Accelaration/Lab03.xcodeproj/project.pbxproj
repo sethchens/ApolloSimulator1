@@ -46,6 +46,9 @@
 		5D83754A2B6D419200736F73 /* testVelocity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testVelocity.h; sourceTree = "<group>"; };
 		5D8375502B6D431400736F73 /* position.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = position.h; sourceTree = "<group>"; };
 		5D8375512B6D5F4900736F73 /* lab04.sln */ = {isa = PBXFileReference; lastKnownFileType = text; path = lab04.sln; sourceTree = "<group>"; };
+		5D8375732B6D600100736F73 /* lab04.vcxproj.user */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = lab04.vcxproj.user; sourceTree = "<group>"; };
+		5D8375742B6D600100736F73 /* lab04.vcxproj */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = lab04.vcxproj; sourceTree = "<group>"; };
+		5D8375752B6D600100736F73 /* lab04.vcxproj.filters */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = lab04.vcxproj.filters; sourceTree = "<group>"; };
 		5D9CD5CE2B6C72910025EB16 /* ground.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ground.cpp; sourceTree = "<group>"; };
 		5DBD00892B6C04FB00148623 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		5DBD008A2B6C04FB00148623 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
@@ -86,6 +89,9 @@
 		C1199AD22B167873002BCF26 = {
 			isa = PBXGroup;
 			children = (
+				5D8375742B6D600100736F73 /* lab04.vcxproj */,
+				5D8375752B6D600100736F73 /* lab04.vcxproj.filters */,
+				5D8375732B6D600100736F73 /* lab04.vcxproj.user */,
 				5D8375502B6D431400736F73 /* position.h */,
 				5D8375482B6D419200736F73 /* ground.h */,
 				5D83754A2B6D419200736F73 /* testVelocity.h */,
