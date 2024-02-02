@@ -12,14 +12,6 @@
 #include "acceleration.h"
 
 /******************************************
- * POINT : CONSTRUCTOR WITH X,Y
- * Initialize the point to the passed position
- *****************************************/
-//Position::Position(double x, double y) : x(x), y(y)
-//{
-//}
-
-/******************************************
  * POINT : ADD
  * Update point based on the distance formula
  *   s = s_0 + vt + 1/2 a t^2
