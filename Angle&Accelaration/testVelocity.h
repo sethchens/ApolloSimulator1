@@ -22,22 +22,22 @@ public:
    void run()
    {
       // Ticket 1: Without Add
-//      constructor_default();
-//      constructor_nonDefault();
-//      getDX();
-//      getDY();
-//      getSpeed_up();
-//      getSpeed_down();
-//      getSpeed_left();
-//      getSpeed_right();
-//      getSpeed_diagonal();
-//      setDX();
-//      setDY();
-//      set_up();
-//      set_down();
-//      set_left();
-//      set_right();
-//      set_diagonal();
+      constructor_default();
+      constructor_nonDefault();
+      getDX();
+      getDY();
+      getSpeed_up();
+      getSpeed_down();
+      getSpeed_left();
+      getSpeed_right();
+      getSpeed_diagonal();
+      setDX();
+      setDY();
+      set_up();
+      set_down();
+      set_left();
+      set_right();
+      set_diagonal();
       
       // Ticket 2: Add
       addDX_zero();
