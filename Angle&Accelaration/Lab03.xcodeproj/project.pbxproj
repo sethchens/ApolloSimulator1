@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D83753D2B6D3FA100736F73 /* ground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D9CD5CE2B6C72910025EB16 /* ground.cpp */; };
+		5D83754B2B6D41C400736F73 /* uiDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D8375442B6D419100736F73 /* uiDraw.cpp */; };
+		5D83754C2B6D41C400736F73 /* position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D8375432B6D419100736F73 /* position.cpp */; };
+		5D83754D2B6D41C400736F73 /* simulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D8375452B6D419100736F73 /* simulator.cpp */; };
+		5D83754E2B6D41C400736F73 /* uiInteract.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D8375422B6D419100736F73 /* uiInteract.cpp */; };
+		5D83754F2B6D41C400736F73 /* velocity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D8375472B6D419200736F73 /* velocity.cpp */; };
 		5DBD008B2B6C04FB00148623 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBD00892B6C04FB00148623 /* OpenGL.framework */; };
 		5DBD008C2B6C04FB00148623 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBD008A2B6C04FB00148623 /* GLUT.framework */; };
 		C1199AEF2B16795A002BCF26 /* angle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1199AE52B16795A002BCF26 /* angle.cpp */; };
 		C1199AF02B16795A002BCF26 /* acceleration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1199AEB2B16795A002BCF26 /* acceleration.cpp */; };
 		C1199AF12B16795A002BCF26 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1199AEC2B16795A002BCF26 /* test.cpp */; };
-		C1199AF22B16795A002BCF26 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1199AED2B16795A002BCF26 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +33,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5D83753F2B6D419100736F73 /* uiInteract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = uiInteract.h; sourceTree = "<group>"; };
+		5D8375402B6D419100736F73 /* velocity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = velocity.h; sourceTree = "<group>"; };
+		5D8375412B6D419100736F73 /* testPosition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testPosition.h; sourceTree = "<group>"; };
+		5D8375422B6D419100736F73 /* uiInteract.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = uiInteract.cpp; sourceTree = "<group>"; };
+		5D8375432B6D419100736F73 /* position.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = position.cpp; sourceTree = "<group>"; };
+		5D8375442B6D419100736F73 /* uiDraw.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = uiDraw.cpp; sourceTree = "<group>"; };
+		5D8375452B6D419100736F73 /* simulator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = simulator.cpp; sourceTree = "<group>"; };
+		5D8375462B6D419100736F73 /* uiDraw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = uiDraw.h; sourceTree = "<group>"; };
+		5D8375472B6D419200736F73 /* velocity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = velocity.cpp; sourceTree = "<group>"; };
+		5D8375482B6D419200736F73 /* ground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ground.h; sourceTree = "<group>"; };
+		5D83754A2B6D419200736F73 /* testVelocity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testVelocity.h; sourceTree = "<group>"; };
+		5D8375502B6D431400736F73 /* position.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = position.h; sourceTree = "<group>"; };
+		5D9CD5CE2B6C72910025EB16 /* ground.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ground.cpp; sourceTree = "<group>"; };
 		5DBD00892B6C04FB00148623 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		5DBD008A2B6C04FB00148623 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		C1199ADB2B167873002BCF26 /* Lab03 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab03; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,7 +57,6 @@
 		C1199AEA2B16795A002BCF26 /* acceleration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acceleration.h; sourceTree = "<group>"; };
 		C1199AEB2B16795A002BCF26 /* acceleration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = acceleration.cpp; sourceTree = "<group>"; };
 		C1199AEC2B16795A002BCF26 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
-		C1199AED2B16795A002BCF26 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C1199AEE2B16795A002BCF26 /* testAcceleration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testAcceleration.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,11 +85,23 @@
 		C1199AD22B167873002BCF26 = {
 			isa = PBXGroup;
 			children = (
+				5D8375502B6D431400736F73 /* position.h */,
+				5D8375482B6D419200736F73 /* ground.h */,
+				5D83754A2B6D419200736F73 /* testVelocity.h */,
+				5D8375442B6D419100736F73 /* uiDraw.cpp */,
+				5D8375462B6D419100736F73 /* uiDraw.h */,
+				5D8375432B6D419100736F73 /* position.cpp */,
+				5D8375452B6D419100736F73 /* simulator.cpp */,
+				5D8375412B6D419100736F73 /* testPosition.h */,
+				5D8375422B6D419100736F73 /* uiInteract.cpp */,
+				5D83753F2B6D419100736F73 /* uiInteract.h */,
+				5D8375472B6D419200736F73 /* velocity.cpp */,
+				5D8375402B6D419100736F73 /* velocity.h */,
+				5D9CD5CE2B6C72910025EB16 /* ground.cpp */,
 				C1199AEB2B16795A002BCF26 /* acceleration.cpp */,
 				C1199AEA2B16795A002BCF26 /* acceleration.h */,
 				C1199AE52B16795A002BCF26 /* angle.cpp */,
 				C1199AE92B16795A002BCF26 /* angle.h */,
-				C1199AED2B16795A002BCF26 /* main.cpp */,
 				C1199AEC2B16795A002BCF26 /* test.cpp */,
 				C1199AE62B16795A002BCF26 /* test.h */,
 				C1199AEE2B16795A002BCF26 /* testAcceleration.h */,
@@ -148,9 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D83754B2B6D41C400736F73 /* uiDraw.cpp in Sources */,
+				5D83754C2B6D41C400736F73 /* position.cpp in Sources */,
+				5D83754D2B6D41C400736F73 /* simulator.cpp in Sources */,
+				5D83754E2B6D41C400736F73 /* uiInteract.cpp in Sources */,
+				5D83754F2B6D41C400736F73 /* velocity.cpp in Sources */,
+				5D83753D2B6D3FA100736F73 /* ground.cpp in Sources */,
 				C1199AEF2B16795A002BCF26 /* angle.cpp in Sources */,
 				C1199AF02B16795A002BCF26 /* acceleration.cpp in Sources */,
-				C1199AF22B16795A002BCF26 /* main.cpp in Sources */,
 				C1199AF12B16795A002BCF26 /* test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,7 +314,9 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
+				"OTHER_CFLAGS[arch=*]" = "-v";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				d = "";
 			};
 			name = Debug;
 		};
@@ -290,6 +326,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				d = "";
 			};
 			name = Release;
 		};

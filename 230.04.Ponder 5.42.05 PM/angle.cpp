@@ -1,25 +1,24 @@
 /***********************************************************************
  * Source File:
- *    MAIN
+ *    ANGLE
  * Author:
  *    Br. Helfrich
  * Summary:
- *    Launches the unit tests - that is all!
+ *    Everything we need to know about a direction
  ************************************************************************/
 
- #include "test.h"
- #include <OpenGL/gl.h>
- #include <GLUT/glut.h>
+#include "angle.h"
+#include <math.h>  // for floor()
+#include <cassert>
+using namespace std;
 
  /************************************
-  * MAIN
-  * There can be only one!
+  * ANGLE : NORMALIZE
   ************************************/
-int main()
+double Angle::normalize(double radians) const
 {
-   // run the test code.
-   testRunner();
-
-   // return success
-   return 0;
+   return -99.9;
 }
+
+
+

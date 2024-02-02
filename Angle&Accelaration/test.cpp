@@ -7,8 +7,10 @@
  *    The test runner which will implement execute all the unit tests
  ************************************************************************/
 
-#include "testAngle.h"
+#include "testPosition.h"
 #include "testAcceleration.h"
+#include "testVelocity.h"
+#include "testAngle.h"
 
 /************************************
  * TEST RUNNER
@@ -19,4 +21,6 @@ void testRunner()
    // Unit tests
    TestAngle().run();
    TestAcceleration().run();
+   TestVelocity().run();
+   // TestPosition().run();
 }
