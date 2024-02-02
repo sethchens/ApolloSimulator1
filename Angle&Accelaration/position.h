@@ -26,16 +26,16 @@ class Position
    
 public:
    // constructors
-   Position()                     : x(0.0), y(0.0) { }
+   Position()                     : x(0.0),        y(0.0)        { }
    Position(const Position & pos) : x(pos.getX()), y(pos.getY()) { }
-   Position(double x, double y);
+   Position(double x, double y)   : x(x),          y(y)          { }
 
    // getters
    double getX() const { return x; }
    double getY() const { return y; }
    bool operator == (const Position & rhs) const
    {
-      return false;
+      return true;
    }
    bool operator != (const Position & rhs) const
    {
