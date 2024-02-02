@@ -45,9 +45,9 @@ public:
       addDY_zero();
       addDY_value();
       add_stationary();
-//      add_noTime();
-//      add_moving4Seconds();
-//      add_moving1Second();
+      add_noTime();
+      add_moving4Seconds();
+      add_moving1Second();
 
       report("Velocity");
    }

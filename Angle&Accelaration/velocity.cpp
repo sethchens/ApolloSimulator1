@@ -19,8 +19,8 @@
  *********************************************/
 void Velocity::add(const Acceleration& acceleration, double time)
 {
-   dx = 99.9;
-   dy = 88.8;
+   dx += acceleration.getDDX() * time;
+   dy += acceleration.getDDY() * time;
 }
 
 /*********************************************
