@@ -5,7 +5,7 @@
  *    Br. Helfrich
  * Summary:
  *    Everything we need to know about speed
- ************************************************************************/ 
+ ************************************************************************/
 
 #include "velocity.h"
 #include "acceleration.h"

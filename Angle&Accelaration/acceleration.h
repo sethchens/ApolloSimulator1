@@ -1,6 +1,6 @@
 /***********************************************************************
  * Header File:
- *    ACCELERATION 
+ *    ACCELERATION
  * Author:
  *    Br. Helfrich
  * Summary:
@@ -37,7 +37,7 @@ public:
    double getDDX()   const           { return ddx; }
    double getDDY()   const           { return ddy; }
                                      
-   // setters                        
+   // setters
    void setDDX(double ddx)           { this->ddx = ddx; }
    void setDDY(double ddy)           { this->ddy = ddy; }
    void set(const Angle & a, double magnitude);

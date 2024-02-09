@@ -38,7 +38,7 @@ Ground::Ground(const Position & posUpperRight) : posUpperRight(posUpperRight)
  void Ground :: reset()
  {
    // determine the landing location
-   iLZ = (int)random(posUpperRight.getX() * 0.1, 
+   iLZ = (int)random(posUpperRight.getX() * 0.1,
                      posUpperRight.getX() * 0.9 - (double)LZ_SIZE);
 
    // give each location on the ground an elevation
@@ -132,8 +132,8 @@ void Ground::draw(ogstream & gout) const
 {
    // iterate through the entire ground and draw it all
    for (long i = 0; i < (int)posUpperRight.getX(); i++)
-      gout.drawRectangle(Position((double)i, 0.0), 
-                         Position((double)(i + 1), ground[i]), 
+      gout.drawRectangle(Position((double)i, 0.0),
+                         Position((double)(i + 1), ground[i]),
                          0.3 /*red*/, 0.2 /*green*/, 0.1 /*blue*/);
 
    // draw the landing pad

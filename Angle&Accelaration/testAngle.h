@@ -11,7 +11,6 @@
 
 
 #include "angle.h"
-#include "unitTest.h"
 
 /*******************************
  * TEST ANGLE
@@ -408,7 +407,7 @@ private:
       
       // exercise
       a.add(r);
-      
+
       // verify
       assertEquals(a.radians, 0.785398 + M_PI);
       assertEquals(r, M_PI);
@@ -427,7 +426,7 @@ private:
       
       // exercise
       a.add(r);
-      
+
       // verify
       assertEquals(a.radians, 0.785398 + M_PI);
       assertEquals(r, M_PI + M_PI * 2.0);
@@ -446,7 +445,7 @@ private:
       
       // exercise
       a.add(r);
-      
+
       // verify
       assertEquals(a.radians, 5.49779);
       assertEquals(r, -M_PI_2);

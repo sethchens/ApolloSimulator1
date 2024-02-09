@@ -4,7 +4,9 @@
  **********************************************************************/
 
 #include "position.h"    // everything should have a point
-#include "angle.h"       // angle of the lander
+#include "acceleration.h"// for ACCELERATION
+#include "lander.h"      // for LANDER
+#include "star.h"        // for STAR
 #include "uiInteract.h"  // for INTERFACE
 #include "uiDraw.h"      // for RANDOM and DRAW*
 #include "ground.h"      // for GROUND
@@ -21,41 +23,10 @@ using namespace std;
 class Simulator
 {
 public:
-   // set up the simulator
-   Simulator(const Position & posUpperRight) : phase(0), ground(posUpperRight) {}
-       
-   // display stuff on the screen
-   void display();
-  
-   unsigned char phase;
-   Angle a;
+   Simulator(const Position & posUpperRight) : ground(posUpperRight) {}
    Ground ground;
 };
 
-/**********************************************************
- * DISPLAY
- * Draw on the screen
- **********************************************************/
-void Simulator::display()
-{
-   ogstream gout;
-
-   // draw the ground
-   ground.draw(gout);
-
-   // draw the lander
-   Position posLander;
-   posLander.setX(200);
-   posLander.setY(375);
-   gout.drawLander(posLander, a.getRadians());
-
-   // draw a star
-   Position posStar;
-   posStar.setX(100);
-   posStar.setY(375);
-   gout.drawStar(posStar, phase);
-   phase++;
-}
 
 
 /*************************************
@@ -68,16 +39,10 @@ void callBack(const Interface* pUI, void* p)
    // is the first step of every single callback function in OpenGL. 
    Simulator * pSimulator = (Simulator *)p;
 
-   // draw the game
-   pSimulator->display();
+   ogstream gout;
 
-   // handle input
-   if (pUI->isRight())
-      pSimulator->a.add(-0.1);
-   if (pUI->isLeft())
-      pSimulator->a.add( 0.1);
-
-
+   // draw the ground
+   pSimulator->ground.draw(gout);
 }
 
 /*********************************
@@ -97,12 +62,6 @@ int main(int argc, char** argv)
 #endif // !_WIN32
 {
    // Run the unit tests
-#ifdef _WIN32
-   AllocConsole();
-   FILE* stream;
-   errno_t err;
-   err = freopen_s(&stream, "CONOUT$", "a", stdout);
-#endif // _WIN32
    testRunner();
 
    

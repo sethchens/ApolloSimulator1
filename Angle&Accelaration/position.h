@@ -1,6 +1,6 @@
 /***********************************************************************
  * Header File:
- *    POSITION 
+ *    POSITION
  * Author:
  *    Br. Helfrich
  * Summary:

@@ -45,7 +45,7 @@ public:
    bool hitGround(const Position& position, int landerWidth) const;
 
 private:
-   double * ground;               // the ground array, expressed in elevation 
+   double * ground;               // the ground array, expressed in elevation
    long    iLZ;                   // the left-most location of the landing zone (LZ)
    Position posUpperRight;        // the width and height of the world
 };
