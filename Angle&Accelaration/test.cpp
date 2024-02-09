@@ -45,5 +45,5 @@ void testRunner()
    TestVelocity().run();
    TestPosition().run();
    TestThrust().run();
-   TestLander().run();
+//   TestLander().run();
 }

@@ -17,6 +17,7 @@
 		5D2C9E682B75B91500B7FA46 /* angle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D2C9E5C2B75B91500B7FA46 /* angle.cpp */; };
 		5D2C9E692B75B91500B7FA46 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D2C9E5E2B75B91500B7FA46 /* test.cpp */; };
 		5D2C9E6A2B75B91500B7FA46 /* simulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D2C9E602B75B91500B7FA46 /* simulator.cpp */; };
+		5DA264EF2B76836B00705132 /* thrust.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DA264EE2B76830700705132 /* thrust.cpp */; };
 		C1D408082B16A43800162ADC /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D408062B16A43700162ADC /* GLUT.framework */; };
 		C1D408092B16A43800162ADC /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D408072B16A43700162ADC /* OpenGL.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		5D2C9E5E2B75B91500B7FA46 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
 		5D2C9E5F2B75B91500B7FA46 /* testThrust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testThrust.h; sourceTree = "<group>"; };
 		5D2C9E602B75B91500B7FA46 /* simulator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = simulator.cpp; sourceTree = "<group>"; };
+		5DA264EE2B76830700705132 /* thrust.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = thrust.cpp; sourceTree = "<group>"; };
 		C1D407FB2B16A3BA00162ADC /* lab05 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lab05; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1D408062B16A43700162ADC /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		C1D408072B16A43700162ADC /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -112,6 +114,7 @@
 				5D2C9E5F2B75B91500B7FA46 /* testThrust.h */,
 				5D2C9E562B75B91500B7FA46 /* testVelocity.h */,
 				5D2C9E502B75B91500B7FA46 /* thrust.h */,
+				5DA264EE2B76830700705132 /* thrust.cpp */,
 				5D2C9E472B75B91500B7FA46 /* uiDraw.cpp */,
 				5D2C9E542B75B91500B7FA46 /* uiDraw.h */,
 				5D2C9E432B75B91400B7FA46 /* uiInteract.cpp */,
@@ -198,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DA264EF2B76836B00705132 /* thrust.cpp in Sources */,
 				5D2C9E612B75B91500B7FA46 /* ground.cpp in Sources */,
 				5D2C9E682B75B91500B7FA46 /* angle.cpp in Sources */,
 				5D2C9E692B75B91500B7FA46 /* test.cpp in Sources */,

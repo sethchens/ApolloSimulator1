@@ -28,29 +28,18 @@ public:
    Thrust() : mainEngine(false), clockwise(false), counterClockwise(false) {}
 
    // Get rotation in radians per second
-   double rotation() const
-   {
-      return 99.9;
-   }
+   double rotation() const;
 
    // get main engine thrust in  m / s ^ 2
-   double mainEngineThrust() const
-   {
-      return 99.9;
-   }
+   double mainEngineThrust() const { return 45000.0 / 15103.0; }
 
    // reflect what is firing
-   bool isMain()    const { return true;       }
-   bool isClock()   const { return true;        }
-   bool isCounter() const { return true; }
+   bool isMain()    const { return mainEngine;       }
+   bool isClock()   const { return clockwise;        }
+   bool isCounter() const { return counterClockwise; }
 
    // set the thrusters
-   void set(const Interface * pUI)
-   {
-      mainEngine       = true;
-      clockwise        = true;
-      counterClockwise = true;
-   }
+   void set(const Interface * pUI);
 
 private:
    bool mainEngine;
