@@ -68,6 +68,7 @@ int main(int argc, char** argv)
    // Initialize OpenGL
    Position posUpperRight(400, 400);
    Interface ui("Lunar Lander", posUpperRight);
+   
 
    // Initialize the game class
    Simulator simulator(posUpperRight);

@@ -85,6 +85,6 @@ private:
  *    INPUT:   min, max : The number of values (min <= num <= max)
  *    OUTPUT   <return> : Return the integer
  ****************************************************************/
-int    random(int    min, int    max);
+// int    random(int    min, int    max);
 double random(double min, double max);
 

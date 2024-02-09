@@ -16,7 +16,14 @@
   ***************************************************************/
 void Lander :: reset(const Position & posUpperRight)
 {
-   status = DEAD;
+   status = PLAYING;
+   angle.setRadians(0.0);
+   pos.setX(99.0);
+   fuel = 5000.0;
+   velocity.setDX(random(-10.0, -4.0));
+   velocity.setDY(random(-2.0, 2.0));
+   pos.setX(99.0);
+   pos.setY(random(75.0, 95.0));
 }
 
 /***************************************************************
@@ -25,6 +32,10 @@ void Lander :: reset(const Position & posUpperRight)
  ***************************************************************/
 void Lander :: draw(const Thrust & thrust, ogstream & gout) const
 {
+   gout.drawLander(pos, angle.getRadians());
+   if (status == DEAD)
+      gout.drawLanderFlames(pos, angle.getRadians());
+   
 }
 
 /***************************************************************
@@ -33,8 +44,11 @@ void Lander :: draw(const Thrust & thrust, ogstream & gout) const
  ***************************************************************/
 Acceleration Lander :: input(const Thrust& thrust, double gravity)
 {
-   pos.setX(-99.9);
-   return Acceleration();
+   Acceleration accelaration;
+   accelaration.setDDX(0.0);
+   accelaration.setDDY(gravity + (thrust.isMain() ? thrust.mainEngineThrust() : 0.0));
+   fuel -= (thrust.isMain() ? 10.0 : 0.0);
+   return accelaration;
 }
 
 /******************************************************************
@@ -43,5 +57,9 @@ Acceleration Lander :: input(const Thrust& thrust, double gravity)
  *******************************************************************/
 void Lander :: coast(Acceleration & acceleration, double time)
 {
-   pos.setX(-99.9);
+   velocity.addDX(acceleration.getDDX() * time);
+   velocity.addDY(acceleration.getDDY() * time);
+   pos.setX(pos.getX() + velocity.getDX() * time + acceleration.getDDX() * 0.5 * (time * time));
+   pos.setY(pos.getY() + velocity.getDY() * time + acceleration.getDDY() * 0.5 * (time * time));
 }
+

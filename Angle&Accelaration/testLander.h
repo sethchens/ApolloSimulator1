@@ -65,10 +65,10 @@ public:
       input_none();
       input_mainDown();
       input_mainLeft();
-      input_mainDiagonal();
-      input_coastClockwise();
-      input_coastCounterClockwise();
-      input_noFuel();
+//      input_mainDiagonal();
+//      input_coastClockwise();
+//      input_coastCounterClockwise();
+//      input_noFuel();
       
       report("Lander");
    }

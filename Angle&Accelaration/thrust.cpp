@@ -8,10 +8,10 @@
 #include "thrust.h"
 
 /*******************************
- *Thrust: Rotation
+ *THRUST: Rotation
  *Get rotation in radians per second
  ********************************/
-double Thrust::rotation() const
+double Thrust :: rotation() const
 {
    if (clockwise && counterClockwise)
       return 0.0;
@@ -23,7 +23,12 @@ double Thrust::rotation() const
 };
 
 /*************************************
- *Thrust: set
+ *THRUST: set
  *Get main engine thrust in  m / s ^ 2
  ********************************************/
-
+void Thrust :: set(const Interface * pUI)
+{
+   mainEngine       = pUI->isDown();
+   clockwise        = pUI->isLeft();
+   counterClockwise = pUI->isRight();
+};

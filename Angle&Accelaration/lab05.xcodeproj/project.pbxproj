@@ -68,6 +68,7 @@
 		5D2C9E5F2B75B91500B7FA46 /* testThrust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testThrust.h; sourceTree = "<group>"; };
 		5D2C9E602B75B91500B7FA46 /* simulator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = simulator.cpp; sourceTree = "<group>"; };
 		5DA264EE2B76830700705132 /* thrust.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = thrust.cpp; sourceTree = "<group>"; };
+		5DA264F12B76D9A600705132 /* uiInteract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = uiInteract.h; path = ../../../../../../../../Downloads/230.05.Ponder/uiInteract.h; sourceTree = "<group>"; };
 		C1D407FB2B16A3BA00162ADC /* lab05 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lab05; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1D408062B16A43700162ADC /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		C1D408072B16A43700162ADC /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -89,6 +90,7 @@
 		C1D407F22B16A3BA00162ADC = {
 			isa = PBXGroup;
 			children = (
+				5DA264F12B76D9A600705132 /* uiInteract.h */,
 				5D2C9E592B75B91500B7FA46 /* acceleration.cpp */,
 				5D2C9E552B75B91500B7FA46 /* acceleration.h */,
 				5D2C9E5C2B75B91500B7FA46 /* angle.cpp */,
@@ -118,7 +120,6 @@
 				5D2C9E472B75B91500B7FA46 /* uiDraw.cpp */,
 				5D2C9E542B75B91500B7FA46 /* uiDraw.h */,
 				5D2C9E432B75B91400B7FA46 /* uiInteract.cpp */,
-				5D2C9E5A2B75B91500B7FA46 /* uiInteract.h */,
 				5D2C9E492B75B91500B7FA46 /* unitTest.h */,
 				5D2C9E532B75B91500B7FA46 /* velocity.cpp */,
 				5D2C9E4B2B75B91500B7FA46 /* velocity.h */,
@@ -138,6 +139,7 @@
 		C1D408052B16A43700162ADC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D2C9E5A2B75B91500B7FA46 /* uiInteract.h */,
 				C1D408062B16A43700162ADC /* GLUT.framework */,
 				C1D408072B16A43700162ADC /* OpenGL.framework */,
 			);

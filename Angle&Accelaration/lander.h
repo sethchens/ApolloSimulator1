@@ -29,24 +29,24 @@ class Lander
    
 public:
   // to create a lander, we need to know something about the board
-  Lander(const Position & posUpperRight) : status(DEAD), fuel(-99.0) {  }
+  Lander(const Position & posUpperRight) : status(SAFE), fuel(5000.0) {  }
 
   // reset the lander and its position
   void reset(const Position& posUpperRight);
 
   // get the status of the lander
-  bool     isDead()         const { return true; }
-  bool     isLanded()       const { return true; }
-  bool     isFlying()       const { return true; }
+  bool     isDead()         const { return status == DEAD    ? true : false; }
+  bool     isLanded()       const { return status == SAFE    ? true : false; }
+  bool     isFlying()       const { return status == PLAYING ? true : false; }
   Position getPosition()    const { return pos;  }
-  double   getSpeed()       const { return 99.9; }
-  int      getFuel()        const { return -99;  }
-  int      getWidth()       const { return 99;   }
-  double   getMaxSpeed()    const { return 99.9; }
+  double   getSpeed()       const { return velocity.getSpeed(); }
+  int      getFuel()        const { return fuel;  }
+  int      getWidth()       const { return 20;   }
+  double   getMaxSpeed()    const { return 4.0; }
 
   // draw the lander on the screen
   void draw(const Thrust & thrust, ogstream & gout) const;
- 
+  
   // handle input
   Acceleration input(const Thrust & thrust, double gravity);
 
@@ -54,10 +54,10 @@ public:
   void coast(Acceleration & acceleration, double time);
 
   // straighten the lander and put it on the ground
-  void land()  {  }
+   void land()  { status = SAFE; angle.setRadians(0.0);  }
 
   // we are dead. Draw the lander upside down
-  void crash() {  }
+   void crash()  { status = DEAD; angle.setRadians(M_PI); }
 
 private:
    Status   status;      // are we dead or not?

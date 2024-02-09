@@ -32,7 +32,7 @@
 #ifdef _WIN32
 #include <stdio.h>
 #include <stdlib.h>
-#include <GL/glut.h>         // OpenGL library we copied 
+#include <GL/glut.h>         // OpenGL library we copied
 #define _USE_MATH_DEFINES
 #include <math.h>
 #define GLUT_TEXT GLUT_BITMAP_HELVETICA_12
@@ -120,7 +120,7 @@ void ogstream :: drawText(const Position & posTopLeft, const char * text) const
  *   INPUT  POINT     The position of the beginning of the star
  *          PHASE     The phase of the twinkling
  *************************************************************************/
-void ogstream :: drawStar(const Position & pos, unsigned char phase) 
+void ogstream :: drawStar(const Position & pos, unsigned char phase)
 {
    // use the current point if the default parameter is used
    if (pos != Position())
@@ -248,7 +248,7 @@ void ogstream :: drawLander(const Position& pos, double angle)
    glBegin(GL_LINE_STRIP);
    PT ptsLegs[] =
    {
-      {-10,0}, {-6,0}, {-9,1}, {-9,8}, {-5,3}, {-9,8}, {-5,6}, 
+      {-10,0}, {-6,0}, {-9,1}, {-9,8}, {-5,3}, {-9,8}, {-5,6},
       {5,6},   {9,8},  {5,3},  {9,8},  {9,1},  {6,0},  {10,0}
    };
    glColor3f((GLfloat)1.0 , (GLfloat)1.0, (GLfloat)1.0);
@@ -287,7 +287,7 @@ void ogstream :: drawLander(const Position& pos, double angle)
    PT ptsCenter[] =
    {
       {0,10},
-      {3,7}, {-3, 7}, {-5,9}, {-5,12}, {-3, 16}, 
+      {3,7}, {-3, 7}, {-5,9}, {-5,12}, {-3, 16},
       {3,16}, {5,12}, {5,9}, {3,7}
    };
    glColor3f((GLfloat)0.7, (GLfloat)0.7, (GLfloat)0.7);
@@ -319,7 +319,7 @@ void ogstream :: drawLander(const Position& pos, double angle)
  * DRAW Lander Flame
  * Draw the flames coming out of a moonlander for thrust
  ***********************************************************************/
-void ogstream :: drawLanderFlames(const Position & pos, double angle, 
+void ogstream :: drawLanderFlames(const Position & pos, double angle,
                                   bool bottom,
                                   bool clockwise,
                                   bool counterClockwise)
@@ -332,7 +332,7 @@ void ogstream :: drawLanderFlames(const Position & pos, double angle,
    if (bottom)
    {
       glBegin(GL_TRIANGLES);
-      glColor3f(1.0 /* red % */, 0.0 /* green % */, 0.0 /* blue % */);     
+      glColor3f(1.0 /* red % */, 0.0 /* green % */, 0.0 /* blue % */);
       glVertexPoint(rotate(pos, -3, 1, angle));
       glVertexPoint(rotate(pos, random(-5.0, 5.0), random(-15.0, -5.0), angle));
       glVertexPoint(rotate(pos,  3, 1, angle));
@@ -410,7 +410,7 @@ Position ogstream :: rotate(const Position& posOrigin,
 
 /******************************************************************
  * RANDOM
- * This function generates a random number.  
+ * This function generates a random number.
  *
  *    INPUT:   min, max : The number of values (min <= num <= max)
  *    OUTPUT   <return> : Return the integer
@@ -426,7 +426,7 @@ int random(int min, int max)
 
 /******************************************************************
  * RANDOM
- * This function generates a random number.  
+ * This function generates a random number.
  *
  *    INPUT:   min, max : The number of values (min <= num <= max)
  *    OUTPUT   <return> : Return the double
