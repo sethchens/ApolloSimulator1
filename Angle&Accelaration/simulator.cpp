@@ -23,8 +23,9 @@ using namespace std;
 class Simulator
 {
 public:
-   Simulator(const Position & posUpperRight) : ground(posUpperRight) {}
+   Simulator(const Position & posUpperRight) : ground(posUpperRight), lander(posUpperRight) {}
    Ground ground;
+   Lander lander;
 };
 
 
@@ -43,6 +44,8 @@ void callBack(const Interface* pUI, void* p)
 
    // draw the ground
    pSimulator->ground.draw(gout);
+   Thrust thrust;
+   pSimulator->lander.draw(thrust, gout);
 }
 
 /*********************************
@@ -68,7 +71,6 @@ int main(int argc, char** argv)
    // Initialize OpenGL
    Position posUpperRight(400, 400);
    Interface ui("Lunar Lander", posUpperRight);
-   
 
    // Initialize the game class
    Simulator simulator(posUpperRight);
