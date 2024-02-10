@@ -854,6 +854,7 @@ private:
       
       // exercise
       a = l.input(t, gravity);
+      std::cout << a.getDDX() << a.getDDY() << std::endl;
       
       // verify
       assertEquals(a.ddx, 0.0);

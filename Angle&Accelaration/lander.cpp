@@ -45,8 +45,8 @@ void Lander :: draw(const Thrust & thrust, ogstream & gout) const
 Acceleration Lander :: input(const Thrust& thrust, double gravity)
 {
    Acceleration accelaration;
-   accelaration.setDDX(0.0);
-   accelaration.setDDY(gravity + (thrust.isMain() ? thrust.mainEngineThrust() : 0.0));
+   accelaration.setDDX((thrust.isMain() ? thrust.mainEngineThrust() : 0.0) * (angle.getRadians() != 0.0 ? cos(angle.getRadians()) : 1.0)          );
+   accelaration.setDDY((thrust.isMain() ? thrust.mainEngineThrust() : 0.0) * (angle.getRadians() != 0.0 ? sin(angle.getRadians()) : 1.0) + gravity);
    fuel -= (thrust.isMain() ? 10.0 : 0.0);
    return accelaration;
 }
