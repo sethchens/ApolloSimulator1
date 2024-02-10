@@ -65,10 +65,10 @@ public:
       input_none();
       input_mainDown();
       input_mainLeft();
-//      input_mainDiagonal();
-//      input_coastClockwise();
-//      input_coastCounterClockwise();
-//      input_noFuel();
+      input_mainDiagonal();
+      input_coastClockwise();
+      input_coastCounterClockwise();
+      input_noFuel();
       
       report("Lander");
    }
@@ -854,7 +854,6 @@ private:
       
       // exercise
       a = l.input(t, gravity);
-      std::cout << a.getDDX() << a.getDDY() << std::endl;
       
       // verify
       assertEquals(a.ddx, 0.0);
@@ -1070,7 +1069,7 @@ private:
       
       // exercise
       a = l.input(t, gravity);
-      
+
       // verify
       assertEquals(a.ddx, 0.0);
       assertEquals(a.ddy, -1.0);     // gravity

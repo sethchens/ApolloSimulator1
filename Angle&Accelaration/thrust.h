@@ -31,7 +31,7 @@ public:
    double rotation() const;
 
    // get main engine thrust in  m / s ^ 2
-   double mainEngineThrust() const { return 45000.0 / 15103.0; }
+   double mainEngineThrust() const { return 45000.00 / 15103.00; }
 
    // reflect what is firing
    bool isMain()    const { return mainEngine;       }

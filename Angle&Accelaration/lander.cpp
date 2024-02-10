@@ -9,6 +9,8 @@
 
 #include "lander.h"
 #include "acceleration.h"
+#include <iostream>
+using namespace std;
 
  /***************************************************************
   * RESET
@@ -45,9 +47,16 @@ void Lander :: draw(const Thrust & thrust, ogstream & gout) const
 Acceleration Lander :: input(const Thrust& thrust, double gravity)
 {
    Acceleration accelaration;
-   accelaration.setDDX((thrust.isMain() ? thrust.mainEngineThrust() : 0.0) * (angle.getRadians() != 0.0 ? cos(angle.getRadians()) : 1.0)          );
-   accelaration.setDDY((thrust.isMain() ? thrust.mainEngineThrust() : 0.0) * (angle.getRadians() != 0.0 ? sin(angle.getRadians()) : 1.0) + gravity);
-   fuel -= (thrust.isMain() ? 10.0 : 0.0);
+   
+   accelaration.set(angle, (fuel >= 10.0 ? (thrust.isMain() ? thrust.mainEngineThrust() : 0.0) : 0.0));
+   accelaration.setDDX(accelaration.getDDX() * -1.0);
+   accelaration.addDDY(gravity);
+   
+   fuel -= (fuel >= 10.0 ? (thrust.isMain() ? 10.0 : 0.0) : 0.0);
+   fuel -= (fuel >= 1.0 ? (thrust.isClock() ? 1.0 : 0.0) : 0);
+   fuel -= (fuel >= 1.0 ? (thrust.isCounter() ? 1.0 : 0.0) : 0.0);
+   angle.setRadians(angle.getRadians() + thrust.rotation());
+   
    return accelaration;
 }
 
