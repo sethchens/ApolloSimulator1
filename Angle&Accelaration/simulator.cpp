@@ -17,9 +17,11 @@
 using namespace std;
 
 
-#define DURATION 0.1
-#define GRAVITY -1.625
-#define NUM_STARS 50
+#define DURATION 0.1           // Duration per frame
+#define GRAVITY -1.625         // Acceleration caused by gravity
+#define NUM_STARS 50           // Number of stars on the screen
+#define SIMULATOR_WIDTH 400.0  // Simulator width
+#define SIMULATOR_HEIGHT 400.0 // Simulator height
 
 /*************************************************************************
  * SIMULATOR
@@ -28,9 +30,7 @@ using namespace std;
 class Simulator
 {
 public:
-   // Constructor for Simulator class
-   // Initializes stars, lander, and ground objects
-   Simulator(const Position & posUpperRight) : ground(posUpperRight), lander(posUpperRight)
+   Simulator(const Position & posUpperRight) : ground(posUpperRight), lander(posUpperRight), posUpperRight(posUpperRight)
    {
       // Create and initialize stars
       for (int i = 0; i < NUM_STARS; i ++)
@@ -39,6 +39,9 @@ public:
          star.reset(posUpperRight.getX(), posUpperRight.getY());
          stars.push_back(star);
       }
+      
+      // reset everything so everything is ready to go
+      reset(posUpperRight);
    }
    
    // Reset everything when crashed
@@ -65,9 +68,13 @@ private:
    Lander lander;
    Ground ground;
    ogstream gout;
+   Position posUpperRight;
 };
 
-// Draw Star, Lander, and Ground
+/*****************************************
+ * DISPLAY
+ * Draw lander, ground, stars, status, and message on the screen
+ * *************************************************************/
 void Simulator::display(const Thrust &thrust)
 {
    // Draw stars
@@ -81,14 +88,14 @@ void Simulator::display(const Thrust &thrust)
    lander.draw(thrust, gout);
    
    // Display fuel, altitude, and speed
-   Position textPosition(10.0, 385.0);
+   Position textPosition(SIMULATOR_WIDTH * 0.025, SIMULATOR_HEIGHT * 0.95);
    gout.setPosition(textPosition);
    gout << "fuel:     " << to_string(lander.getFuel()) << endl
         << "altitude: " << to_string(int(ground.getElevation(lander.getPosition()))) << endl
         << "speed:    " << to_string(int(lander.getSpeed()));
    
    // Display message based on lander status
-   Position messagePosition(150.0, 300.0);
+   Position messagePosition(SIMULATOR_WIDTH * 0.375, SIMULATOR_HEIGHT * 0.75);
    gout.setPosition(messagePosition);
    if (lander.isDead())
       gout << "Armstrong you suck!" << endl;
@@ -96,7 +103,10 @@ void Simulator::display(const Thrust &thrust)
       gout << "Armstrong your arm's strong!" << endl;
 }
 
-// Turns user inputs into Thrust object
+/*****************************************
+ * INPUT
+ *  turn input into acceleration and apply to the lander
+ * *************************************************************/
 void Simulator::input(const Interface &pUI, Thrust &thrust)
 {
    // Set the thrust based on user input
@@ -109,7 +119,10 @@ void Simulator::input(const Interface &pUI, Thrust &thrust)
    lander.coast(a, DURATION);
 }
 
-// Reset the lander when crashed
+/*****************************************
+ * RESET
+ * restart simulator
+ * *************************************************************/
 void Simulator::reset(const Position &posUpperRight)
 {
    // Reset stars, lander, and ground
@@ -119,7 +132,10 @@ void Simulator::reset(const Position &posUpperRight)
    ground.reset();
 }
 
-// Handle collision
+/*****************************************
+ * COLLIDE
+ * handle the collision situation
+ * *************************************************************/
 void Simulator::collide()
 {
    // Check if lander has hit the ground or landed on platform
@@ -128,15 +144,24 @@ void Simulator::collide()
       lander.crash();
    }
    else if (ground.onPlatform(lander.getPosition(), lander.getWidth()))
-      lander.land();
+      lander.getSpeed() <= 4 ? lander.land() : lander.crash();
+      
 }
 
-// Callback function to handle one frame of the simulator
+/*************************************
+ * CALLBACK
+ * Handle one frame of the simulator
+ **************************************/
 void callBack(const Interface* pUI, void* p)
 {
    // Cast the void pointer to a Simulator object
    Simulator * pSimulator = (Simulator *)p;
-   Thrust thrust; // Create Thrust object
+   
+   // Create Thrust object
+   Thrust thrust;
+   
+   // Initiate posUpperRight
+   Position position(400, 400);
 
    // Handle collision
    pSimulator->collide();
@@ -151,25 +176,36 @@ void callBack(const Interface* pUI, void* p)
    else if (pSimulator->getLander().isDead())
    {
       pSimulator->display(thrust);
+      if (pUI->isSpace())
+         pSimulator->reset(position);
+      else if (pUI->isQ())
+         exit(0);
    }
    // Otherwise, display everything
    else
       pSimulator->display(thrust);
+      if (pUI->isSpace())
+         pSimulator->reset(position);
+   else if (pUI->isQ())
+      exit(0);
 }
 
-// Main function
+/*********************************
+ * Main is pretty sparse.  Just initialize
+ * my LM type and call the display engine.
+ * That is all!
+ *********************************/
 int main(int argc, char** argv)
 {
    // Run unit tests
    testRunner();
-
+   
    // Initialize OpenGL
    Position posUpperRight(400, 400);
    Interface ui("Lunar Lander", posUpperRight);
-
+   
    // Initialize Simulator object
    Simulator simulator(posUpperRight);
-   simulator.reset(posUpperRight);
 
    // Run the simulator
    ui.run(callBack, (void *)&simulator);
