@@ -20,12 +20,11 @@ void Lander :: reset(const Position & posUpperRight)
 {
    status = PLAYING;
    angle.setRadians(0.0);
-   pos.setX(99.0);
-   fuel = 5000.0;
+   fuel = 5000.0;   
    velocity.setDX(random(-10.0, -4.0));
    velocity.setDY(random(-2.0, 2.0));
-   pos.setX(99.0);
-   pos.setY(random(75.0, 95.0));
+   pos.setX(posUpperRight.getX() - 1);
+   pos.setY(random(posUpperRight.getY() * .75, posUpperRight.getY() * .95));
 }
 
 /***************************************************************
@@ -34,9 +33,13 @@ void Lander :: reset(const Position & posUpperRight)
  ***************************************************************/
 void Lander :: draw(const Thrust & thrust, ogstream & gout) const
 {
-   gout.drawLander(pos, angle.getRadians());
-   if (status == DEAD)
-      gout.drawLanderFlames(pos, angle.getRadians());
+   if (thrust.isMain())
+   {
+      gout.drawLander(pos, angle.getRadians());
+      gout.drawLanderFlames(pos, angle.getRadians(), thrust.isMain(), thrust.isClock(), thrust.isCounter());
+   }
+   else
+      gout.drawLander(pos, angle.getRadians());
    
 }
 

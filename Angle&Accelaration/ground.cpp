@@ -76,7 +76,7 @@ Ground::Ground(const Position & posUpperRight) : posUpperRight(posUpperRight)
 }
 
 /***********************************************************
- * HTI GROUND
+ * HIT GROUND
  * Did the lander hit the ground?
  **********************************************************/
 bool Ground::hitGround(const Position& pos, int landerWidth) const

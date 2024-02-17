@@ -57,7 +57,7 @@ public:
    void land()  { status = SAFE; angle.setRadians(0.0);  }
 
   // we are dead. Draw the lander upside down
-   void crash()  { status = DEAD; angle.setRadians(M_PI); }
+   void crash()  { status = DEAD; angle.setDown(); }
 
 private:
    Status   status;      // are we dead or not?
