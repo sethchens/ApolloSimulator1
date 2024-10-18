@@ -1,6 +1,6 @@
 # Overview
 This simulator incorporates some of the principles of physics to replicate the motion of an Apollo lunar lander during its descent and landing on the Moon's surface.<br>
-The primary objective of developing this software is to enhance pair programming skills, gain practical experience with Agile sprint cycles, and recognize the importance of consulting experts in specialized fields, as is common in software development.<br>
+The primary objective of developing this software is to enhance pair programming skills, strenghten the understanding of software abstraction idea, gain practical experience with Agile sprint cycles, and recognize the importance of consulting experts in specialized fields, as is common in software development.<br>
 
 # Development
 - Xcode
